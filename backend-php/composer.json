@@ -1,0 +1,15 @@
+{
+    "name": "rcatlin/test",
+    "authors": [
+        {
+            "name": "Ryan Catlin",
+            "email": "ryan.catlin@gmail.com"
+        }
+    ],
+    "require": {
+        "league/json-guard": "^1.0",
+        "league/json-reference": "^1.0",
+        "silex/silex": "^2.2",
+        "react/http": "^0.7.4"
+    }
+}

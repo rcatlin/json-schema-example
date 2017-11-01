@@ -1,0 +1,4 @@
+backend-php/vendor
+.idea
+backend-node/node_modules
+frontend-react/node_modules
