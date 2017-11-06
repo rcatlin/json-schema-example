@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Product",
   "type": "object",
   "properties": {
@@ -7,24 +7,28 @@
       "type": "number"
     },
     "brand": {
-      "description": "a product's brand name",
+      "title": "Brand",
+      "description": "The Brand name",
       "type": "string",
       "maxLength": 20
     },
     "description": {
-      "description": "a product's description",
+      "title": "Description",
+      "description": "A description.",
       "type": "string",
       "maxLength": 100
     },
     "name": {
-      "description": "a product's name",
+      "title": "Name",
+      "description": "The Name",
       "type": "string",
       "maxLength": 20
     },
     "price": {
-      "description": "a product's price",
+      "title": "Price",
+      "description": "The price in US currency",
       "type": "number",
-      "exclusiveMinimum": true,
+      "exclusiveMinimum": 0,
       "minimum": 0
     }
   },
