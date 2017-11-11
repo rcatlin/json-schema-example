@@ -6,8 +6,14 @@ use Psr\Http\Message\ServerRequestInterface;
 use React\Http;
 use React\Socket;
 
+$getopt = new \GetOpt\GetOpt([
+    ['p', 'port', \GetOpt\GetOpt::OPTIONAL_ARGUMENT, 'Server port', 8080],
+]);
+$getopt->process();
+
 $store = [];
 $currentId = 0;
+$port = $getopt->getOption('port');
 
 /** @var \Silex\Application $app */
 $app = require __DIR__ . '/app.php';
@@ -42,9 +48,9 @@ $server = new Http\Server(function (ServerRequestInterface $request) use ($app) 
 
 // Event Loop
 $loop = \React\EventLoop\Factory::create();
-$socket = new Socket\Server(8080, $loop);
+$socket = new Socket\Server($port, $loop);
 $server->listen($socket);
 
-echo "Server running at http://127.0.0.1:8080\n";
+echo "Server running at http://127.0.0.1:$port\n";
 
 $loop->run();
